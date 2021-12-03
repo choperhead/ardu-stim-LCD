@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="no"?>
+<!-- <!DOCTYPE NotepadPlus [
+  <!ENTITY serial SYSTEM "./ArduinoLibs/serial.txt" >
+  <!ENTITY constants SYSTEM "./ArduinoLibs/constants.txt">
+]> -->
+<NotepadPlus>
+	<!-- language doesnt really mean anything, its more of a comment -->
+	<AutoComplete language="Arduino">
+		<!--
+		Environment specifies how the language should be interpreted. ignoreCase makes autocomplete
+		ignore any casing, start and stopFunc specify what chars a function starts and stops with.
+		param specifies parameter separator and terminal can be used to specify a character that stops
+		any function. Using the same character for different functions results in undefined behaviour.
+		
+		05/11/2009
+		The basic word character are : A-Z a-z 0-9 and '_' 
+		If your function name contains other characters,
+		add your characters in "additionalWordChar" attribute (without separator)
+		in order to make calltip hint work
+		-->
+		<Environment ignoreCase="no" startFunc="(" stopFunc=")" paramSeparator="," terminal=";" additionalWordChar=""/>
+		<!--
+		The following items should be alphabetically ordered.
+		func="yes" means the keyword should be treated as a fuction, and thus can be used in the parameter
+		calltip system. If this is the case, the retVal attribute specifies the return value/type. Any
+		following Param tag specifies a parameter, they must be in order. The name attributes specifies
+		the parameter name.
+		-->
+		<!-- start of list -->
+		<KeyWord name="#define" />
+		<KeyWord name="#include" />
+    <!-- constants -->
+	<!-- &constants; -->
+	<!-- end constants -->
+    <!-- main keywords -->
+		<KeyWord name="abs" func="yes">
+			<Overload retVal="int" >
+				<Param name="int i" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="acos" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="analogRead" func="yes">
+			<Overload retVal="int" >
+				<Param name="pin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="analogReference" func="yes">
+			<Overload retVal="" >
+				<Param name="type" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="analogWrite" func="yes">
+			<Overload retVal="" >
+				<Param name="pin" />
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="array" />
+		<KeyWord name="asin" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="atan" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="atan2" func="yes">
+			<Overload retVal="double" >
+				<Param name="double y" />
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>		
+		<KeyWord name="attatchInterrupt" func="yes">
+			<Overload retVal="" >
+				<Param name="interupt" />
+				<Param name="function" />
+				<Param name="mode" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="bit" func="yes">
+			<Overload retVal="value" >
+				<Param name="n" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="bitClear" func="yes">
+			<Overload retVal="" >
+				<Param name="x" />
+				<Param name="n" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="bitRead" func="yes">
+			<Overload retVal="value" >
+				<Param name="x" />
+				<Param name="n" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="bitSet" func="yes">
+			<Overload retVal="" >
+				<Param name="x" />
+				<Param name="n" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="bitWrite" func="yes">
+			<Overload retVal="" >
+				<Param name="x" />
+				<Param name="n" />
+				<Param name="b" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="boolean" />
+		<KeyWord name="break" />
+		<KeyWord name="byte" />
+		<KeyWord name="byte" func="yes">
+			<Overload retVal="byte" >
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="case" />
+		<KeyWord name="ceil" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="char" />
+		<KeyWord name="char" func="yes">
+			<Overload retVal="char" >
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="class" />
+		<KeyWord name="const" />
+		<KeyWord name="constrain" func="yes">
+			<Overload retVal="value" >
+				<Param name="x" />
+				<Param name="lower" />
+				<Param name="upper" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="continue" />
+		<KeyWord name="cos" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="default" />
+		<KeyWord name="degrees" func="yes">
+			<Overload retVal="double" >
+				<Param name="rad x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="delay" func="yes">
+			<Overload retVal="" >
+				<Param name="ms" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="delayMicroseconds" func="yes">
+			<Overload retVal="" >
+				<Param name="us" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="detatchInterrupt" func="yes">
+			<Overload retVal="" >
+				<Param name="interupt" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="digitalRead" func="yes">
+			<Overload retVal="HIGH | LOW" >
+				<Param name="pin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="digitalWrite" func="yes">
+			<Overload retVal="" >
+				<Param name="pin" />
+				<Param name="HIGH | LOW" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="do" />
+		<KeyWord name="double" />	
+		<KeyWord name="else" />
+		<KeyWord name="exp" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="false" />
+		<KeyWord name="float" />
+		<KeyWord name="float" func="yes">
+			<Overload retVal="float" >
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="floor" func="yes">
+			<Overload retVal="double" >
+				<Param name="x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="for" func="yes">
+			<Overload retVal="" >
+				<Param name="initialisation" />
+				<Param name="condition" />
+				<Param name="increment" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="goto" />
+		<KeyWord name="highByte" func="yes">
+			<Overload retVal="byte" >
+				<Param name="x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="if" />
+		<KeyWord name="int" />
+		<KeyWord name="int" func="yes">
+			<Overload retVal="int" >
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="interrupts" func="yes">
+			<Overload retVal="" >
+				<Param name="" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="log" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="long" />
+		<KeyWord name="long" func="yes">
+			<Overload retVal="long" >
+				<Param name="value" />
+			</Overload>
+		</KeyWord>	
+		<KeyWord name="loop" func="yes">
+			<Overload retVal="" >
+				<Param name="" />
+				<Param name="" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="lowByte" func="yes">
+			<Overload retVal="byte" >
+				<Param name="x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="map" func="yes">
+			<Overload retVal="value" >
+				<Param name="value" />
+				<Param name="fromLow" />
+				<Param name="fromHigh" />
+				<Param name="toLow" />
+				<Param name="toHigh" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="max" func="yes">
+			<Overload retVal="" >
+				<Param name="x" />
+				<Param name="y" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="micros" func="yes">
+			<Overload retVal="unsigned long" >
+				<Param name="" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="millis" func="yes">
+			<Overload retVal="unsigned long" >
+				<Param name="" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="min" func="yes">
+			<Overload retVal="" >
+				<Param name="x" />
+				<Param name="y" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="new" />
+		<KeyWord name="noInterrupts" func="yes">
+			<Overload retVal="" >
+				<Param name="" />
+			</Overload>	
+		</KeyWord>
+		<KeyWord name="noTone" func="yes">
+			<Overload retVal="" >
+				<Param name="pin" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="null" />
+		<KeyWord name="pinMode" func="yes">
+			<Overload retVal="" >
+				<Param name="pin" />
+				<Param name="INPUT | OUTPUT | INPUT_PULLUP" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="pow" func="yes">
+			<Overload retVal="double" >
+				<Param name="base" />
+				<Param name="exponent" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="private" />
+		<KeyWord name="protected" />
+		<KeyWord name="public" />
+		<KeyWord name="pulseIn" func="yes">
+			<Overload retVal="unsigned long" >
+				<Param name="pin" />
+				<Param name="HIGH | LOW" />
+				<Param name="timeout" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="radians" func="yes">
+			<Overload retVal="double" >
+				<Param name="deg" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="random" func="yes">
+			<Overload retVal="long" >
+				<Param name="min" />
+							<Param name="seed" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="randomSeed" func="yes">
+			<Overload retVal="" >
+				<Param name="dataPin" />
+				<Param name="clockPin" />
+				<Param name="bitOrder" />
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="return" />
+		<KeyWord name="round" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<!-- Serial Lib -->
+		&serial;
+		<!-- end Serial Lib -->
+		<KeyWord name="setup" func="yes">
+			<Overload retVal="" >
+				<Param name="" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="shiftIn" func="yes">
+			<Overload retVal="byte" >
+				<Param name="dataPin" />
+				<Param name="clockPin" />
+				<Param name="bitOrder" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="shiftOut" func="yes">
+			<Overload retVal="" >
+					<Param name="max" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="short" />
+		<KeyWord name="signed" />
+		<KeyWord name="sin" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sizeof" func="yes">
+			<Overload retVal="bytes" >
+				<Param name="variable" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sq" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="sqrt" func="yes">
+			<Overload retVal="double" >
+				<Param name="double x" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="static" />
+		<KeyWord name="string" />
+		<KeyWord name="String" />	
+		<KeyWord name="switch" func="yes">
+			<Overload retVal="" >
+				<Param name="var" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="tan" func="yes">
+			<Overload retVal="double" >
+				<Param name="rad" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="this" />
+		<KeyWord name="throw" />
+		<KeyWord name="tone" func="yes">
+			<Overload retVal="" >
+				<Param name="pin" />
+				<Param name="frequency" />
+				<Param name="duration" />
+			</Overload>
+		</KeyWord>
+		<KeyWord name="true" />
+		<KeyWord name="try" />
+		<KeyWord name="unsigned" />
+		<KeyWord name="void" />
+		<KeyWord name="volatile" />
+		<KeyWord name="while" />
+		<KeyWord name="word" />
+		<KeyWord name="word" func="yes">
+			<Overload retVal="word" >
+				<Param name="value" />
+			</Overload>
+		</KeyWord>
+		<!-- end of list -->
+	</AutoComplete>
+</NotepadPlus>
