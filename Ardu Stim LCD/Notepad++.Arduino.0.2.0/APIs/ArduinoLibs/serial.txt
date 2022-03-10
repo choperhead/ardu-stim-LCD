@@ -1,5 +1,0 @@
-<KeyWord name="Serial" func="yes">
-  <Overload retVal="">
-    <Param name="" />
-  </Overload>
-</KeyWord>
