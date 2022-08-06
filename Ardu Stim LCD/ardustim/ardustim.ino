@@ -80,6 +80,8 @@ volatile bool serial_upd = false;
 #define sec_out		2
 #define sec_outN	3
 
+#define sync_out	11
+
 
 // M.M. representacion en grados puede ser 360 o 720 (segun si tiene CMP o no)
 // cuando es 360  Prescaler = (cant flancos) / 120
@@ -414,6 +416,8 @@ void setup() {
   pinMode(sec_out, OUTPUT); /* Secondary Out */
   pinMode(sec_outN, OUTPUT); /* Secondary Out inverted*/
   
+  pinMode(sync_out, OUTPUT); /* Sync Out */
+  
 #if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
   pinMode(53, OUTPUT); 
   pinMode(52, OUTPUT); 
@@ -628,6 +632,13 @@ ISR(TIMER1_COMPA_vect) {
     TCCR1B |= prescaler_bits;
     reset_prescaler = false;
   }
+  
+  // Sync pulse M.M.
+  if(edge_counter<2)
+		digitalWrite(sync_out, HIGH);
+  else
+	   digitalWrite(sync_out, LOW);
+  
   /* Reset next compare value for RPM changes */
   OCR1A = new_OCR1A;  /* Apply new "RPM" from Timer2 ISR, i.e. speed up/down the virtual "wheel" */
 }
