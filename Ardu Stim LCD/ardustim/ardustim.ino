@@ -129,6 +129,11 @@ wheels Wheels[MAX_WHEELS] = {
   { Ducati_friendly_name, ducati48_3, 0.8, 96, 360 },
 #endif
 
+#if defined	_VIRAGO250_
+  { Virago250_friendly_name, virago250, 0.3, 36, 360 },
+#endif
+
+
 
 //--------------------------------------------------------------
   /* Pointer to friendly name string, pointer to edge array, RPM Scaler, Number of edges in the array, whether the number of edges covers 360 or 720 degrees */
@@ -310,6 +315,10 @@ void setup() {
   loadConfig();
   lcd.begin(16, 2);
   lcd.print(" Ardu-Stim LCD  ");
+  
+  lcd.setCursor(0,1);
+  lcd.print("  20/07/2022 ");	
+  
   delay(2000);
   
   LCD_Update(0);

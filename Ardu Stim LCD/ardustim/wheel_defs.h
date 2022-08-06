@@ -82,6 +82,7 @@
 #define _BMW_BOXER_
 #define _HONDA_CG150_
 #define _DUCATI_
+#define _VIRAGO250_
 
 //-------ORIGINAL CODES --------------------------   
 //#define _DIZZY_FOUR_CYLINDER 
@@ -179,6 +180,9 @@
 #endif
 #if defined	_DUCATI_
    DUCATI_,
+#endif
+#if defined	_VIRAGO250_
+   VIRAGO250_,
 #endif
 
        
@@ -370,6 +374,7 @@
  const char bmwn_friendly_name[] PROGMEM =           "  BMW boxer (-) ";
  const char honda_cg150_friendly_name[] PROGMEM =    "  Honda CG 150  ";
  const char Ducati_friendly_name[] PROGMEM =         "  Ducati 48-3   ";
+ const char Virago250_friendly_name[] PROGMEM =      " Yam. Virago 250";
  
 //------------------ 
  const char dizzy_four_cylinder_friendly_name[] PROGMEM =              "4 cylinder dizzy";
@@ -543,7 +548,17 @@
 	 1,0,1,0,1,0,1,0,1,0,1,0,
 	 1,0,1,0,1,0,0,0,0,0,0,0
  };
- 
+ //yamaha virago 250 4 dientes a 60º
+ const unsigned char virago250[] PROGMEM = 
+ {
+	 1,0,0,0,0,0,
+	 1,0,0,0,0,0,
+	 1,0,0,0,0,0,
+	 1,0,0,0,0,0,	 
+	 0,0,0,0,0,0,
+	 0,0,0,0,0,0
+	
+ };
  
 //------------------------------------------------
  /* Very simple 50% duty cycle */
