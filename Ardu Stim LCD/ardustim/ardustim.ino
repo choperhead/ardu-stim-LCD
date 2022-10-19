@@ -135,6 +135,9 @@ wheels Wheels[MAX_WHEELS] = {
   { Virago250_friendly_name, virago250, 0.3, 36, 360 },
 #endif
 
+#if defined	_VIRAGO750_
+  { Virago750_friendly_name, virago750, 0.6, 72, 360 },
+#endif
 
 
 //--------------------------------------------------------------
@@ -316,10 +319,10 @@ void setup() {
   serialSetup();
   loadConfig();
   lcd.begin(16, 2);
-  lcd.print(" Ardu-Stim LCD  ");
+  lcd.print("  AXON MOTOS  ");
   
   lcd.setCursor(0,1);
-  lcd.print("  20/07/2022 ");	
+  lcd.print("  18/08/2022 ");	
   
   delay(2000);
   

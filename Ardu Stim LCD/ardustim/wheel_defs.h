@@ -83,6 +83,7 @@
 #define _HONDA_CG150_
 #define _DUCATI_
 #define _VIRAGO250_
+#define _VIRAGO750_
 
 //-------ORIGINAL CODES --------------------------   
 //#define _DIZZY_FOUR_CYLINDER 
@@ -184,7 +185,9 @@
 #if defined	_VIRAGO250_
    VIRAGO250_,
 #endif
-
+#if defined	_VIRAGO750_
+   VIRAGO750_,
+#endif
        
 //----------------------- 
 #if defined	_DIZZY_FOUR_CYLINDER
@@ -375,6 +378,7 @@
  const char honda_cg150_friendly_name[] PROGMEM =    "  Honda CG 150  ";
  const char Ducati_friendly_name[] PROGMEM =         "  Ducati 48-3   ";
  const char Virago250_friendly_name[] PROGMEM =      " Yam. Virago 250";
+ const char Virago750_friendly_name[] PROGMEM =      " Yam. Virago 750";
  
 //------------------ 
  const char dizzy_four_cylinder_friendly_name[] PROGMEM =              "4 cylinder dizzy";
@@ -558,6 +562,20 @@
 	 0,0,0,0,0,0,
 	 0,0,0,0,0,0
 	
+ };
+ 
+ //yamaha virago 750 2 dientes que forman 90º
+ const unsigned char virago750[] PROGMEM = 
+ {
+	 1,1,1,1,1,1,1,0,0,
+	 1,1,1,1,1,1,1,0,0,
+	 0,0,0,0,0,0,0,0,0,
+	 0,0,0,0,0,0,0,0,0,
+	 0,0,0,0,0,0,0,0,0,
+	 0,0,0,0,0,0,0,0,0,
+	 0,0,0,0,0,0,0,0,0,
+	 0,0,0,0,0,0,0,0,0
+	 
  };
  
 //------------------------------------------------
