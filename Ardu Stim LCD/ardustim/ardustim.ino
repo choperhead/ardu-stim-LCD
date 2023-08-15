@@ -406,8 +406,8 @@ void setup() {
   ADCSRA |= B00001000;
 
 //  pinMode(7, OUTPUT); /* Debug pin for Saleae to track sweep ISR execution speed */
-  pinMode(8, OUTPUT); /* Primary (crank usually) output */
-  pinMode(9, OUTPUT); /* Secondary (cam usually) output */
+  pinMode(11, OUTPUT); /* Primary (cam usually) output */
+  pinMode(12, OUTPUT); /* Secondary (crank usually) output */
 //  pinMode(10, OUTPUT); /* Knock signal for seank, ony on LS1 pattern, NOT IMPL YET */
   
 
